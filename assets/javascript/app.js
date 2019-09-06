@@ -29,3 +29,10 @@ var quizQuestions = [
     correctAnswer: ["243 Days"]
   }
 ]
+
+// Global Variables
+var counter = 60;
+var currentQuestion = 0;
+var correct = 0;
+var incorrect = 0;
+var timer;
