@@ -42,6 +42,7 @@ function loadQuestion() {
   var question = quizQuestions[currentQuestion].question;
   var choices = quizQuestions[currentQuestion].choices;
 
+  $('#time').html("Timer: " + counter + " seconds");
   $('#game').html('<h4>' + question + '</h4>');
 }
 
