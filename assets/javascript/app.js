@@ -46,4 +46,6 @@ function loadQuestion() {
   $('#game').html('<h4>' + question + '</h4>');
 }
 
+
+
 loadQuestion();
