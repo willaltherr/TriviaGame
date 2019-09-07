@@ -42,7 +42,7 @@ function nextQuestion() {
 
   var isQuestionOver = (quizQuestions.length - 1) === currentQuestion;
   if (isQuestionOver) {
-    console.log('Game is over!!!');
+
   } else {
     currentQuestion++;
     loadQuestion();
@@ -93,5 +93,12 @@ function loadChoices(choices) {
 
   return result;
 }
+
+// Go to next question regardless of answer selection
+
+$(document).on('click', '.choice', function() {
+  var selectedAnswer = $(this).attr('data-answer');
+  console.log("yepp", selectedAnswer);
+});;
 
 loadQuestion();
