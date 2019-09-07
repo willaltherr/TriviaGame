@@ -115,15 +115,25 @@ $(document).on('click', '.choice', function() {
 // Display Results of the Trivia Game
 function displayResult() {
   var result = `
-    <p>You answered ${correct} question(s) correct.</p>
-    <p>You answered ${incorrect} question(s) wrong.</p>
-    <p>Total questions ${quizQuestions.length} question(s) right.</p>
-    <button>Start Over</button>
+    <p>Total answered correct = ${correct}</p>
+    <p>Total answered incorrect = ${incorrect}</p>
+    <p>Total questions = ${quizQuestions.length}</p>
+    <button class="btn btn-primary" id="reset">Start Over</button>
   `;
 
     $('#game').html(result);
 }
 
+// Reset Game
 
+$(document).on('click', '#reset', function() {
+  counter = 15;
+  currentQuestion = 0;
+  correct = 0;
+  incorrect = 0;
+  timer = null;
+
+  loadQuestion();
+});;
 
 loadQuestion();
