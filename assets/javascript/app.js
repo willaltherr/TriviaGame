@@ -31,15 +31,25 @@ var quizQuestions = [
 ]
 
 // Global Variables
-var counter = 60;
+var counter = 10;
 var currentQuestion = 0;
 var correct = 0;
 var incorrect = 0;
 var timer;
 
+// Next Question Function
+function nextQuestion() {
+  currentQuestion++;
+  loadQuestion();
+}
+
 // Create a 60 second timer
 function timeUp() {
   clearInterval(timer);
+
+  incorrect++;
+
+  nextQuestion();
 }
 
 function countDown() {
@@ -49,12 +59,13 @@ function countDown() {
 
   if (counter === 0) {
     timeUp();
+
   }
 }
 
 // Display Questions and Answer Choices
 function loadQuestion() {
-  counter = 60;
+  counter = 10;
   timer = setInterval(countDown, 1000);
 
   var question = quizQuestions[currentQuestion].question;
