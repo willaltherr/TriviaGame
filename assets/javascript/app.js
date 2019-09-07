@@ -39,8 +39,14 @@ var timer;
 
 // Next Question Function
 function nextQuestion() {
-  currentQuestion++;
-  loadQuestion();
+
+  var isQuestionOver = (quizQuestions.length - 1) === currentQuestion;
+  if (isQuestionOver) {
+    console.log('Game is over!!!');
+  } else {
+    currentQuestion++;
+    loadQuestion();
+  }
 }
 
 // Create a 60 second timer
