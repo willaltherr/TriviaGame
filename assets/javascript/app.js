@@ -192,6 +192,10 @@ function loadImage(status) {
   }
 }
 
-// loadImage for Correct
+// Start Game and load questions
 
-loadQuestion();
+$('#start').click(function() {
+    $('#start').remove();
+    $('#time').html(counter);
+    loadQuestion();
+});;
