@@ -30,6 +30,14 @@ var quizQuestions = [
   }
 ]
 
+var correctImages = [
+  '../assets/images/correct.gif'
+]
+
+var wrongImages = [
+  '../assets/images/wrong.gif'
+]
+
 // Global Variables
 var counter = 15;
 var currentQuestion = 0;
@@ -56,6 +64,7 @@ function timeUp() {
 
   incorrect++;
 
+  loadImage('incorrect');
   nextQuestion();
 }
 
@@ -105,10 +114,12 @@ $(document).on('click', '.choice', function() {
 
   if (correctAnswer === selectedAnswer) {  
       correct++;
+      loadImage('correct');
       nextQuestion();
   } 
   else {
       incorrect++;
+      loadImage('incorrect');
       nextQuestion();
     }  
 });
@@ -143,5 +154,25 @@ function loadRemainingQuestion() {
 
   return `Remaining Question: ${remainingQuestion}/${totalQuestion}`;
 }
+
+// Images for every right and wrong answer
+
+function loadImage(status) {
+  var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
+
+  if (status === 'win') {
+    $('#game').html(`
+      <p class="preload-image">Good job, you picked the right answer!</p>
+      <p class="preload-image">The correct answer is ${correctAnswer}.</p>
+    `)
+  } else {
+    $('#game').html(`
+      <p class="preload-image">Sorry, you picked the wrong answer!</p>
+      <p class="preload-image">The correct answer is ${correctAnswer}.</p>
+    `)
+  }
+}
+
+// loadImage for Correct
 
 loadQuestion();
