@@ -38,10 +38,17 @@ var incorrect = 0;
 var timer;
 
 // Create a 60 second timer
+function countDown() {
+  counter--;
 
+  $('#time').html("Timer: " + counter + " seconds");
+}
 
 // Display Questions and Answer Choices
 function loadQuestion() {
+  counter = 60;
+  timer = setInterval(countDown, 1000);
+
   var question = quizQuestions[currentQuestion].question;
   var choices = quizQuestions[currentQuestion].choices;
 
