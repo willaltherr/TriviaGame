@@ -42,6 +42,7 @@ function nextQuestion() {
 
   var isQuestionOver = (quizQuestions.length - 1) === currentQuestion;
   if (isQuestionOver) {
+    displayResult();
 
   } else {
     currentQuestion++;
@@ -112,6 +113,17 @@ $(document).on('click', '.choice', function() {
 });
 
 // Display Results of the Trivia Game
+function displayResult() {
+  var result = `
+    <p>You answered ${correct} question(s) correct.</p>
+    <p>You answered ${incorrect} question(s) wrong.</p>
+    <p>Total questions ${quizQuestions.length} question(s) right.</p>
+    <button>Start Over</button>
+  `;
+
+    $('#game').html(result);
+}
+
 
 
 loadQuestion();
