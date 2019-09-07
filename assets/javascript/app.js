@@ -31,7 +31,7 @@ var quizQuestions = [
 ]
 
 // Global Variables
-var counter = 10;
+var counter = 15;
 var currentQuestion = 0;
 var correct = 0;
 var incorrect = 0;
@@ -49,7 +49,7 @@ function nextQuestion() {
   }
 }
 
-// Create a 60 second timer
+// Create a 15 second timer
 function timeUp() {
   clearInterval(timer);
 
@@ -71,7 +71,7 @@ function countDown() {
 
 // Display Questions and Answer Choices
 function loadQuestion() {
-  counter = 10;
+  counter = 15;
   timer = setInterval(countDown, 1000);
 
   var question = quizQuestions[currentQuestion].question;
@@ -102,11 +102,11 @@ $(document).on('click', '.choice', function() {
 
   if (correctAnswer === selectedAnswer) {  
       correct++;
-      console.log('wins');
+      nextQuestion();
   } 
   else {
       incorrect++;
-      console.log('loss');
+      nextQuestion();
     }  
 });
 
