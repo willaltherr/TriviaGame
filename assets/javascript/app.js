@@ -37,6 +37,9 @@ var correct = 0;
 var incorrect = 0;
 var timer;
 
+// Create a 60 second timer
+
+
 // Display Questions and Answer Choices
 function loadQuestion() {
   var question = quizQuestions[currentQuestion].question;
