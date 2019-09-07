@@ -1,8 +1,8 @@
 var quizQuestions = [
   {
-  question: "What is the hottest planet in our Solar System?",
-  choices: ["Earth", "Venus", "Mars", "Mercury"],
-  correctAnswer: ["Venus"]
+    question: "What is the hottest planet in our Solar System?",
+    choices: ["Earth", "Venus", "Mars", "Mercury"],
+    correctAnswer: ["Venus"]
   },
 
   {
@@ -97,8 +97,18 @@ function loadChoices(choices) {
 // Go to next question regardless of answer selection
 
 $(document).on('click', '.choice', function() {
-  var selectedAnswer = $(this).attr('data-answer');
-  console.log("yepp", selectedAnswer);
-});;
+  const selectedAnswer = $(this).attr('data-answer');
+  const correctAnswer = quizQuestions[currentQuestion].correctAnswer;
+
+  if (correctAnswer === selectedAnswer) {
+      correct++;
+      console.log('Winsss!!!!');
+      
+  } else {
+      incorrect++;
+      console.log('Lost!!!!');
+      
+  }
+});
 
 loadQuestion();
