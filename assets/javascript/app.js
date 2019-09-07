@@ -97,6 +97,7 @@ function loadChoices(choices) {
 // Go to next question regardless of answer selection
 
 $(document).on('click', '.choice', function() {
+  clearInterval(timer);
   var selectedAnswer = $(this).attr('data-answer');
   var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
 
@@ -109,5 +110,8 @@ $(document).on('click', '.choice', function() {
       nextQuestion();
     }  
 });
+
+// Display Results of the Trivia Game
+
 
 loadQuestion();
