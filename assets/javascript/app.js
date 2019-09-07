@@ -31,11 +31,21 @@ var quizQuestions = [
 ]
 
 var correctImages = [
-  '../assets/images/correct.gif'
+  './assets/images/correct.gif',
+  './assets/images/win2.gif',
+  './assets/images/win3.gif',
+  './assets/images/win4.gif',
+  './assets/images/win5.gif',
+  './assets/images/win6.gif'
 ]
 
 var wrongImages = [
-  '../assets/images/wrong.gif'
+  './assets/images/wrong.gif',
+  './assets/images/alien2.gif',
+  './assets/images/predator.gif',
+  './assets/images/alien.gif',
+  './assets/images/predator2.gif',
+  './assets/images/predator3.gif'
 ]
 
 // Global Variables
@@ -157,18 +167,27 @@ function loadRemainingQuestion() {
 
 // Images for every right and wrong answer
 
+function randomImage(images) {
+  var random = Math.floor(Math.random() * images.length);
+  var randomImage = images[random];
+  return randomImage;
+}
+
+
 function loadImage(status) {
   var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
 
   if (status === 'correct') {
     $('#game').html(`
       <p class="preload-image">Good job, you picked the right answer!</p>
-      <p class="preload-image">The correct answer is ${correctAnswer}.</p>
+      <p class="preload-image">The correct answer is <b>${correctAnswer}</b>.</p>
+      <img src="${randomImage(correctImages)}"/>
     `)
   } else {
     $('#game').html(`
       <p class="preload-image">Sorry, you picked the wrong answer!</p>
-      <p class="preload-image">The correct answer is ${correctAnswer}.</p>
+      <p class="preload-image">The correct answer is <b>${correctAnswer}</b>.</p>
+      <img src="${randomImage(wrongImages)}"/>
     `)
   }
 }
