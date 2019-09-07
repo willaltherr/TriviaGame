@@ -42,18 +42,18 @@ function loadQuestion() {
   var question = quizQuestions[currentQuestion].question;
   var choices = quizQuestions[currentQuestion].choices;
 
-  $('#time').html('Timer: ' + counter);
-    $('#game').html(`
-        <h4>${question}</h4>
-        ${loadChoices(choices)}
-    `);
+  $('#time').html("Timer: " + counter + " seconds");
+  $('#game').html(`
+    <h4>${question}</h4>
+    ${loadChoices(choices)}
+  `);
 }
 
 function loadChoices(choices) {
-  let result = '';
+  var result = '';
 
-  for (let i = 0; i < choices.length; i++) {
-      result += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
+  for (var i = 0; i < choices.length; i++) {
+    result += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
   }
 
   return result;
