@@ -65,7 +65,7 @@ function timeUp() {
   incorrect++;
 
   loadImage('incorrect');
-  nextQuestion();
+  setTimeout(nextQuestion, 3 * 1000);
 }
 
 function countDown() {
@@ -115,12 +115,12 @@ $(document).on('click', '.choice', function() {
   if (correctAnswer === selectedAnswer) {  
       correct++;
       loadImage('correct');
-      nextQuestion();
+      setTimeout(nextQuestion, 3 * 1000);
   } 
   else {
       incorrect++;
       loadImage('incorrect');
-      nextQuestion();
+      setTimeout(nextQuestion, 3 * 1000);
     }  
 });
 
@@ -160,7 +160,7 @@ function loadRemainingQuestion() {
 function loadImage(status) {
   var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
 
-  if (status === 'win') {
+  if (status === 'correct') {
     $('#game').html(`
       <p class="preload-image">Good job, you picked the right answer!</p>
       <p class="preload-image">The correct answer is ${correctAnswer}.</p>
