@@ -38,10 +38,18 @@ var incorrect = 0;
 var timer;
 
 // Create a 60 second timer
+function timeUp() {
+  clearInterval(timer);
+}
+
 function countDown() {
   counter--;
 
   $('#time').html("Timer: " + counter + " seconds");
+
+  if (counter === 0) {
+    timeUp();
+  }
 }
 
 // Display Questions and Answer Choices
