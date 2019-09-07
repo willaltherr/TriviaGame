@@ -82,6 +82,7 @@ function loadQuestion() {
   $('#game').html(`
     <h4>${question}</h4>
     ${loadChoices(choices)}
+    ${loadRemainingQuestion()}
   `);
 }
 
@@ -134,6 +135,13 @@ $(document).on('click', '#reset', function() {
   timer = null;
 
   loadQuestion();
-});;
+});
+
+function loadRemainingQuestion() {
+  var remainingQuestion = quizQuestions.length - (currentQuestion + 1);
+  var totalQuestion = quizQuestions.length;
+
+  return `Remaining Question: ${remainingQuestion}/${totalQuestion}`;
+}
 
 loadQuestion();
