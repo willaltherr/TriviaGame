@@ -27,6 +27,36 @@ var quizQuestions = [
     question: "How fast do Neutron Stars spin per second?",
     choices: ["600", "700", "800", "900"],
     correctAnswer: "600"
+  },
+
+  {
+    question: "Which two planets in our solar system have no moons?",
+    choices: ["Jupiter & Saturn", "Mars & Mercury", "Mercury & Venus", "Pluto & Uranus"],
+    correctAnswer: "Mercury & Venus"
+  },
+
+  {
+    question: "How many years will it take for the Sun to expand and engulf Earth?",
+    choices: ["7 Billion Years", "7.5 Billion Years", "8 Billion Years", "8.5 Billion Years"],
+    correctAnswer: "7.5 Billion Years"
+  },
+
+  {
+    question: "Why will footprints on the moon never disappear?",
+    choices: ["No Wind", "No Water", "No Movement", "No Air"],
+    correctAnswer: "No Wind"
+  },
+
+  {
+    question: "How many known moons are there orbiting Jupiter?",
+    choices: ["7", "28", "54", "79"],
+    correctAnswer: "79"
+  },
+
+  {
+    question: "What percent of the universe is visible from Earth?",
+    choices: ["1%", "5%", "10%", "15%"],
+    correctAnswer: "5%"
   }
 ]
 
