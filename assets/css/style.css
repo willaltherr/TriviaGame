@@ -1,6 +1,22 @@
+body {
+    background: url(../images/space2.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .choice {
   border: 1px solid lightgrey;
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+#time, #game {
+  color: white;
+}
+
+h1 {
+  padding-bottom: 2%;
 }
